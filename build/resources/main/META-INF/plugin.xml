@@ -1,0 +1,46 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <idea-version since-build="242" until-build="252.*" />
+  <change-notes><![CDATA[<h3>Added</h3>
+
+<ul><li>Example code – <code>ProjectActivity</code></li><li>Added <code>opentest4j</code> test dependency, see: <a href="https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-faq.html#missing-opentest4j-dependency-in-test-framework">Missing opentest4j dependency in Test Framework</a></li></ul>
+
+<h3>Removed</h3>
+
+<ul><li>Example code – <code>MyApplicationActivationListener</code></li><li>Remove redundant IntelliJ Platform dependency helpers: <code>instrumentationTools()</code>, <code>pluginVerifier()</code>, <code>zipSigner()</code></li><li>GitHub Actions: Remove <code>gradle/actions/wrapper-validation</code> because validation is performed by default in <code>gradle/actions/setup-gradle@v4</code></li></ul>
+
+<h3>Changed</h3>
+
+<ul><li>Change JVM version to <code>21</code></li><li>Upgrade Gradle Wrapper to <code>8.13</code></li><li>Update <code>platformVersion</code> to <code>2024.2.5</code></li><li>Change since/until build to <code>242-252.*</code> (2024.2-2025.2.*)</li><li>Dependencies - upgrade <code>org.jetbrains.intellij.platform</code> to <code>2.5.0</code></li><li>Dependencies - upgrade <code>org.jetbrains.kotlin.jvm</code> to <code>2.1.20</code></li><li>Dependencies - upgrade <code>org.jetbrains.qodana</code> to <code>2024.3.4</code></li><li>Dependencies - upgrade <code>org.jetbrains.kotlinx.kover</code> to <code>0.9.1</code></li><li>Dependencies (GitHub Actions) - upgrade <code>gradle/actions/wrapper-validation</code> to <code>v4</code></li><li>Dependencies (GitHub Actions) - upgrade <code>codecov/codecov-action</code> to <code>v5</code></li></ul>]]></change-notes>
+  <description><![CDATA[<p><strong>IntelliJ Platform Plugin Template</strong> is a repository that provides a pure template to make it easier to create a new plugin project (check the <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">Creating a repository from a template</a> article).</p>
+
+<p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>]]></description>
+  <version>2.1.0</version>
+  <id>org.jetbrains.plugins.template</id>
+  <name>STYLEX</name>
+  <vendor>JetBrains</vendor>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <!-- 使用 PSI 的基础 -->
+  <depends>com.intellij.modules.java</depends>
+  <resource-bundle>messages.MyBundle</resource-bundle>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow factoryClass="org.example.MyToolWindowFactory" id="Styler" icon="/icons/pentagram.svg" />
+    <!--        <postStartupActivity implementation="org.jetbrains.plugins.template.startup.MyProjectActivity" />-->
+    <applicationConfigurable instance="org.example.settings.AppSettingsConfigurable" id="org.example.settings.AppSettingsConfigurable" parentId="tools" key="plugin.settings.name" bundle="messages.MyBundle" />
+    <applicationService serviceImplementation="org.example.settings.AppSettings" />
+    <localInspection language="JAVA" implementationClass="org.example.JavaStyleLocalInspection" key="inspection.codestyle" bundle="messages.MyBundle" level="WARNING" enabledByDefault="true" />
+    <notificationGroup displayType="BALLOON" id="Styler" />
+  </extensions>
+  <actions>
+    <action id="SetStyleDirectory" class="org.example.SetStyleDirectoryAction" text="Set as Style Directory" description="Set this directory as the style source directory">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+    </action>
+    <action id="ApplyStyle" class="org.example.ApplyStyleAction" text="Transfer Code Style" description="Automatically fix code style inconsistencies">
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+    <action id="SelectRefCode" class="org.example.SelectRefCodeAction" text="Select Reference Style">
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
