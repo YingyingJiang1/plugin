@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-  <idea-version since-build="242" until-build="252.*" />
+  <idea-version since-build="231" until-build="241.*" />
   <change-notes><![CDATA[<h3>Added</h3>
 
 <ul><li>Example code – <code>ProjectActivity</code></li><li>Added <code>opentest4j</code> test dependency, see: <a href="https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-faq.html#missing-opentest4j-dependency-in-test-framework">Missing opentest4j dependency in Test Framework</a></li></ul>
@@ -29,7 +29,12 @@
     <!--        <postStartupActivity implementation="org.jetbrains.plugins.template.startup.MyProjectActivity" />-->
     <applicationConfigurable instance="org.example.settings.AppSettingsConfigurable" id="org.example.settings.AppSettingsConfigurable" parentId="tools" key="plugin.settings.name" bundle="messages.MyBundle" />
     <applicationService serviceImplementation="org.example.settings.AppSettings" />
-    <localInspection language="JAVA" implementationClass="org.example.JavaStyleLocalInspection" key="inspection.codestyle" bundle="messages.MyBundle" level="WARNING" enabledByDefault="true" />
+    <!--        <localInspection-->
+    <!--                language="JAVA" implementationClass="org.example.JavaStyleLocalInspection"-->
+    <!--                key="inspection.codestyle" bundle="messages.MyBundle"-->
+    <!--                level="WARNING"-->
+    <!--                enabledByDefault="true"-->
+    <!--        />-->
     <notificationGroup displayType="BALLOON" id="Styler" />
   </extensions>
   <actions>
@@ -39,7 +44,7 @@
     <action id="ApplyStyle" class="org.example.ApplyStyleAction" text="Transfer Code Style" description="Automatically fix code style inconsistencies">
       <add-to-group group-id="EditorPopupMenu" anchor="last" />
     </action>
-    <action id="SelectRefCode" class="org.example.SelectRefCodeAction" text="Select Reference Style">
+    <action id="SelectRefCode" class="org.example.SelectRefCodeAction" text="Select Reference Code">
       <add-to-group group-id="EditorPopupMenu" anchor="last" />
     </action>
   </actions>

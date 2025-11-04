@@ -13,7 +13,7 @@ import static org.example.settings.AppSettings.StyleSourceType;
 /**
  * 封装 StyleSource UI 选择控件和参数输入框。
  */
-public class StyleSourceComponent extends JPanel{
+public class StyleSourceComponent extends JPanel {
 	private final Map<StyleSourceType, JRadioButton> radioButtons = new HashMap<>();
 	private final Map<StyleSourceType, JTextField> textFields = new HashMap<>();
 	private final ButtonGroup buttonGroup = new ButtonGroup();

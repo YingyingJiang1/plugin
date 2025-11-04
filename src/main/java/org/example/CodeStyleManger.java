@@ -22,7 +22,7 @@ public class CodeStyleManger {
 		// TODO: 利用缓存提高效率
 		AppSettings.State state = AppSettings.getInstance().getState();
 		if (state.styleSource.getStyleSourceType() == AppSettings.StyleSourceType.SELECTED_CODE) {
-			Controller controller = new Controller(null);
+			Controller controller = new Controller(new Configuration());
 			return controller.extractStyle(ReferenceCodeStorage.getInstance().getReferenceCode(), state.language.name());
 		}
 		if (isStyleSourceChanged(state.styleSource)) {

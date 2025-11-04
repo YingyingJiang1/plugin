@@ -1,5 +1,7 @@
 package org.example.settings;
 
+import com.intellij.openapi.project.Project;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,6 +17,7 @@ public class AppSettingsComponent {
 		this.mainPanel = new JPanel(new BorderLayout());;
 		styleSourceComponent = new StyleSourceComponent();
 		mainPanel.add(styleSourceComponent, BorderLayout.NORTH);
+
 	}
 
 	public JPanel getPanel() {

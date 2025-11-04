@@ -1,6 +1,7 @@
 package org.example.settings;
 
 import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -10,7 +11,7 @@ import java.util.Objects;
 /**
  * Provides controller functionality for application settings.
  */
-final class AppSettingsConfigurable implements Configurable {
+public final class AppSettingsConfigurable implements Configurable {
 
 	private AppSettingsComponent mySettingsComponent;
 

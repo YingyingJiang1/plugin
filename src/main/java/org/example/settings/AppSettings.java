@@ -49,6 +49,10 @@ public final class AppSettings implements PersistentStateComponent<AppSettings.S
 		public void loadState(State state) {
 			styleSource = state.styleSource;
 		}
+
+		public void updateStyleSource(StyleSourceType source) {
+			styleSource.styleSourceType = source;
+		}
 	}
 
 	/**

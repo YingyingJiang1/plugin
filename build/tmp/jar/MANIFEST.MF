@@ -6,8 +6,8 @@ Build-OS: Windows 11 10.0 amd64
 Build-Plugin: IntelliJ Platform Gradle Plugin
 Build-Plugin-Version: 2.5.0
 Platform-Type: IC
-Platform-Version: 2024.2.5
-Platform-Build: 242.24807.4
+Platform-Version: 2023.1
+Platform-Build: 231.8109.175
 Kotlin-Available: true
 Kotlin-Stdlib-Bundled: false
 Kotlin-Version: 2.1.20

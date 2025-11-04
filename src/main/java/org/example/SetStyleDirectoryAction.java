@@ -8,8 +8,11 @@ import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.example.settings.AppSettings;
+import org.example.settings.AppSettingsChangeListener;
+import org.example.settings.AppSettingsConfigurable;
 import org.jetbrains.annotations.NotNull;
 
 public class SetStyleDirectoryAction extends AnAction {
@@ -32,6 +35,11 @@ public class SetStyleDirectoryAction extends AnAction {
 					"Now using: " + dirPath,
 					NotificationType.INFORMATION
 			));
+
+			Project project = e.getProject();
+			project.getMessageBus()
+					.syncPublisher(AppSettingsChangeListener.TOPIC)
+					.stateChanged(AppSettings.getInstance().getState());
 
 		}
 	}

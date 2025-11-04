@@ -18,12 +18,12 @@
                 instance="org.example.settings.AppSettingsConfigurable" id="org.example.settings.AppSettingsConfigurable" parentId="tools" key="plugin.settings.name" bundle="messages.MyBundle" />
         <applicationService
                 serviceImplementation="org.example.settings.AppSettings"/>
-        <localInspection
-                language="JAVA" implementationClass="org.example.JavaStyleLocalInspection"
-                key="inspection.codestyle" bundle="messages.MyBundle"
-                level="WARNING"
-                enabledByDefault="true"
-        />
+<!--        <localInspection-->
+<!--                language="JAVA" implementationClass="org.example.JavaStyleLocalInspection"-->
+<!--                key="inspection.codestyle" bundle="messages.MyBundle"-->
+<!--                level="WARNING"-->
+<!--                enabledByDefault="true"-->
+<!--        />-->
         <notificationGroup displayType="BALLOON" id="Styler"/>
 
     </extensions>
@@ -43,7 +43,7 @@
         </action>
         <action id="SelectRefCode"
                 class="org.example.SelectRefCodeAction"
-                text="Select Reference Style">
+                text="Select Reference Code">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
 

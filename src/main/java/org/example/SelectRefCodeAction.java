@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
+import org.example.settings.AppSettings;
 
 public class SelectRefCodeAction extends AnAction {
 
@@ -28,6 +29,7 @@ public class SelectRefCodeAction extends AnAction {
 
 		// 保存目标风格代码
 		ReferenceCodeStorage.getInstance().setReferenceCode(selectedText);
+		AppSettings.getInstance().getState().updateStyleSource(AppSettings.StyleSourceType.SELECTED_CODE);
 //		Messages.showInfoMessage(project, "Target style code selected.", "Success");
 	}
 }
